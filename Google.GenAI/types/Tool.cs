@@ -69,6 +69,16 @@ namespace Google.GenAI.Types {
           }
 
     /// <summary>
+    /// Optional. Tool to support file search through uploaded files in FileSearchStores.
+    /// </summary>
+    [JsonPropertyName("fileSearch")]
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    public FileSearch
+        ? FileSearch {
+            get; set;
+          }
+
+    /// <summary>
     /// Optional. Function tool type. One or more function declarations to be passed to the model
     /// along with the current user query. Model may decide to call a subset of these functions by
     /// populating FunctionCall in the response. User should provide a FunctionResponse for each
